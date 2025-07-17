@@ -1,32 +1,16 @@
 # 🧠 Barlow Twins + Transformer Decoder for Image Captioning
 
-An experimental research pipeline combining **Barlow Twins** self-supervised learning, **EfficientNetV2-S** as a visual backbone, and a **Transformer Decoder** for generating high-quality image captions. This project aims to explore the effectiveness of decoupled visual and language representations for multimodal tasks.
+This repository presents a modular, experimental image captioning pipeline that combines **Barlow Twins self-supervised learning**, **EfficientNetV2-S** as a visual backbone, and a custom **Transformer Decoder** to generate human-like image captions.  
+It explores the separation of representation learning and caption generation — a powerful approach for generalizing across domains.
 
 ---
 
-## 🚀 Project Overview
+## 🚀 Highlights
 
-This repository proposes a two-phase approach for image captioning:
-
-1. **Self-Supervised Visual Representation Learning**  
-   Train an image encoder using [Barlow Twins](https://arxiv.org/abs/2103.03230) to extract powerful features without any labels.
-
-2. **Caption Generation with a Transformer Decoder**  
-   Use a transformer-based decoder to generate text descriptions from the visual features extracted by the encoder.
-
-The overall objective is to assess whether self-supervised learning (SSL) can produce image embeddings that rival or exceed traditional supervised setups for vision-language tasks.
-
----
-
-## 🧪 Key Features
-
-- 🧬 **Barlow Twins** contrastive learning for redundancy-reducing SSL
-- ⚡ **EfficientNetV2-S** as a compact and efficient vision backbone
-- 🧠 **Transformer Decoder** to generate natural language captions
-- 🧪 **Modular Pipeline** with flexible training and evaluation
-- 🧪 **Dataset**: [MS COCO 2017](https://cocodataset.org/#download)
-
----
-
-## 🗂️ Repository Structure
+- 🧬 **Barlow Twins Pretraining**: Self-supervised learning with projection head (512 → 128), trained on patch-wise visual tokens
+- ⚡ **EfficientNetV2-S**: Encoder backbone (with projection head **only during pretraining**)
+- 🧠 **Transformer Decoder**: 6-layer, 8-head, GELU-activated decoder with learnable positional encodings
+- 📝 **Custom Tokenizer & Loader**: Token-level caption generation using `word2idx`, `<SOS>`/`<EOS>` logic, with fallback image handling
+- 📦 **Dataset**: Microsoft COCO 2017 for both training and evaluation
+- ⚙️ **Fully PyTorch** — no external vision-language libraries used
 
