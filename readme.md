@@ -1,6 +1,6 @@
 # 🧠 Barlow Twins + Transformer Decoder for Image Captioning
 
-⚠️ **Note: This repository is not production-ready. It is under active development and research.**
+⚠️ **Note : This repository is not production-ready. It is under active development and research.**
 I'm actively seeking guidance, feedback, and open to collaborations from the community.
 
 This repository presents a modular, experimental image captioning pipeline that combines **Barlow Twins self-supervised learning**, **EfficientNetV2-S** as a visual backbone, and a custom **Transformer Decoder** to generate human-like image captions.  
